@@ -96,7 +96,8 @@ func main() {
 			break
 		}
 		if err != nil {
-			log.Fatal("receive failed: ", err)
+			log.Println("receive failed: ", err) // Failed to receive data, needs to subscribe again
+			break
 		}
 		log.Println(data.GetProcessedRange().GetLastVersion())
 	}
